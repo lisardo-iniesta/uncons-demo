@@ -39,14 +39,14 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <main className="min-h-screen bg-slate-900 text-slate-50">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm">
+      <header className="border-b border-slate-800/50 bg-slate-900/80 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-3xl font-bold text-slate-50">
             UNCONS
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-1">
+          <p className="text-slate-400 mt-1">
             Voice-first AI tutor for Anki
           </p>
         </div>
@@ -56,16 +56,16 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {state === "loading" && (
           <div className="flex items-center justify-center py-16">
-            <div className="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full" />
-            <span className="ml-3 text-gray-600 dark:text-gray-400">
+            <div className="animate-spin w-8 h-8 border-4 border-cyan-500 border-t-transparent rounded-full" />
+            <span className="ml-3 text-slate-400">
               Loading decks...
             </span>
           </div>
         )}
 
         {state === "error" && (
-          <div className="bg-red-50 dark:bg-red-900/20 rounded-xl p-6 text-center">
-            <p className="text-red-700 dark:text-red-400 mb-4">{error}</p>
+          <div className="glass-card p-6 text-center border border-red-500/30">
+            <p className="text-red-400 mb-4">{error}</p>
             <button
               onClick={() => window.location.reload()}
               className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
@@ -77,12 +77,12 @@ export default function Home() {
 
         {state === "ready" && (
           <>
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            <h2 className="text-xl font-semibold text-slate-200 mb-6">
               Select a deck to review
             </h2>
 
             {decks.length === 0 ? (
-              <div className="text-center py-16 text-gray-500 dark:text-gray-400">
+              <div className="text-center py-16 text-slate-400">
                 <p>No decks found.</p>
                 <p className="text-sm mt-2">
                   Create some decks in Anki to get started.

@@ -41,27 +41,27 @@ export function DeckCard({
       onClick={onClick}
       disabled={!hasCards}
       className={`
-        relative p-6 rounded-xl border-2 transition-all duration-200
-        text-left w-full
+        relative p-6 rounded-2xl transition-all duration-200
+        text-left w-full glass-card
         ${
           selected
-            ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
+            ? "border-cyan-500 ring-2 ring-cyan-500/30"
             : hasCards
-              ? "border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md"
-              : "border-gray-100 dark:border-gray-800 opacity-50 cursor-not-allowed"
+              ? "hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10"
+              : "opacity-50 cursor-not-allowed"
         }
         ${className}
       `}
       data-testid="deck-card"
     >
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+      <h3 className="text-lg font-semibold text-slate-50 mb-2">
         {name}
       </h3>
       <p
         className={`text-sm ${
           hasCards
-            ? "text-blue-600 dark:text-blue-400"
-            : "text-gray-400 dark:text-gray-600"
+            ? "text-cyan-400"
+            : "text-slate-500"
         }`}
       >
         {hasCards
@@ -72,7 +72,7 @@ export function DeckCard({
       {/* Selection indicator */}
       {selected && (
         <div className="absolute top-3 right-3">
-          <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
+          <div className="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center">
             <svg
               className="w-4 h-4 text-white"
               fill="none"
