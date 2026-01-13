@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+logs/
+*.log
+
+# Cache
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Checkpoints
+checkpoints.sqlite
+
+# Temp files
+tmp*-cwd
+nul

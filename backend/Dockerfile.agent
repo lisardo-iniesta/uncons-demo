@@ -1,0 +1,44 @@
+# UNCONS Voice Agent Dockerfile
+# LiveKit Agents worker for voice tutoring
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies for audio processing
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libsndfile1 \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Poetry
+RUN pip install poetry==1.7.1
+
+# Copy dependency files
+COPY pyproject.toml poetry.lock* ./
+
+# Install dependencies (no dev dependencies in production)
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi --no-dev
+
+# Copy source code
+COPY src/ ./src/
+
+# Create non-root user for security
+RUN groupadd -r appgroup && useradd -r -g appgroup appuser
+
+# Create data directory with correct ownership
+RUN mkdir -p /app/data && chown -R appuser:appgroup /app
+
+# Switch to non-root user
+USER appuser
+
+# Set Python path
+ENV PYTHONPATH=/app
+
+# LiveKit agent HTTP port (for Railway health checks)
+ENV LIVEKIT_AGENT_HTTP_PORT=${PORT:-8081}
+
+# Production command
+CMD python -m src.agents.worker start

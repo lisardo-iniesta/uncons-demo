@@ -1,0 +1,10 @@
+# Railway configuration for UNCONS Backend
+# NOTE: Health checks configured per-service in Railway dashboard
+# Do NOT set healthcheckPath here - it overrides dashboard for ALL services
+
+[build]
+dockerfilePath = "Dockerfile"
+
+[deploy]
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

@@ -1,0 +1,29 @@
+{
+  "decks": [
+    {
+      "name": "Demo",
+      "cards": [
+        {
+          "id": 6001,
+          "front": "What is the Single Responsibility Principle in Python?",
+          "back": "A class should have only one reason to change. Each module/class should focus on one task."
+        },
+        {
+          "id": 6002,
+          "front": "Sleep apnea is often treated with CPAP treatment, but what does CPAP stand for?",
+          "back": "CPAP (Continuous Positive Airway Pressure). It is a common treatment for sleep apnea, using a machine to deliver mild, pressurized air through a mask to keep airways open during sleep, preventing pauses in breathing. Source: Sáez, M. et al. (2024). Artificial intelligence (AI) in the initiation of CPAP treatment. European Respiratory Journal, 64(Suppl. 68), PA4364. https://doi.org/10.1183/13993003.congress-2024.PA4364"
+        },
+        {
+          "id": 6003,
+          "front": "What is the most frequent arrhythmia in adults?",
+          "back": "Non-valvular atrial fibrillation (AF) is the most frequent arrhythmia in adults, and its prevalence is expected to double in the next 30 years. Source: Santamaría, A. et al. (2025). LOLATAO—An Artificial-Intelligence-Based Virtual Assistant for Clinical Follow-Up of Patients with Non-Valvular Atrial Fibrillation (AF) Undergoing Oral Anticoagulant Therapy (OAT): A Feasibility Study. Journal of Clinical Medicine, 14(9), 3023. https://doi.org/10.3390/jcm14093023"
+        },
+        {
+          "id": 6004,
+          "front": "Who led Tucuvi's series A?",
+          "back": "The round was led by Cathay Innovation and Kfund, through its early-growth fund Leadwind. Source: https://www.tucuvi.com/blog/tucuvi-raises-20m-series-a-to-accelerate-adoption-of-its-ai-care-management-platform-across-healthcare-organizations"
+        }
+      ]
+    }
+  ]
+}
